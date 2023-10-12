@@ -1,0 +1,29 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\Projects\\eSyaProjects2022\\eSya.ManageRates.WebAPI\\eSya.ManageRates.WebAPI\\eSya.ManageRates.WebAPI\\wwwroot\\Resources\\ar-EG.json",
+      "PackagePath": "staticwebassets\\Resources\\ar-EG.json"
+    },
+    {
+      "Id": "D:\\Projects\\eSyaProjects2022\\eSya.ManageRates.WebAPI\\eSya.ManageRates.WebAPI\\eSya.ManageRates.WebAPI\\wwwroot\\Resources\\en-US.json",
+      "PackagePath": "staticwebassets\\Resources\\en-US.json"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.eSya.ManageRates.WebAPI.props",
+      "PackagePath": "build\\eSya.ManageRates.WebAPI.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.eSya.ManageRates.WebAPI.props",
+      "PackagePath": "buildMultiTargeting\\eSya.ManageRates.WebAPI.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.eSya.ManageRates.WebAPI.props",
+      "PackagePath": "buildTransitive\\eSya.ManageRates.WebAPI.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.eSya.ManageRates.WebAPI.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

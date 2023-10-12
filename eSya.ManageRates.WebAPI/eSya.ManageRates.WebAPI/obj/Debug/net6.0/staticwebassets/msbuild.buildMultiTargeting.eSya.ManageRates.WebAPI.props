@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\eSya.ManageRates.WebAPI.props" />
+</Project>

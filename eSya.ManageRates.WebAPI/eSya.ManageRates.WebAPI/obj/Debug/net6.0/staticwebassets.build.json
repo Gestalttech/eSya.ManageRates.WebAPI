@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "Hash": "AJkJPp0Eh14nzil9cyYAC72qhpPXaZPPS5/VvKfWZFQ=",
+  "Source": "eSya.ManageRates.WebAPI",
+  "BasePath": "_content/eSya.ManageRates.WebAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "eSya.ManageRates.WebAPI\\wwwroot",
+      "Source": "eSya.ManageRates.WebAPI",
+      "ContentRoot": "D:\\Projects\\eSyaProjects2022\\eSya.ManageRates.WebAPI\\eSya.ManageRates.WebAPI\\eSya.ManageRates.WebAPI\\wwwroot\\",
+      "BasePath": "_content/eSya.ManageRates.WebAPI",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "D:\\Projects\\eSyaProjects2022\\eSya.ManageRates.WebAPI\\eSya.ManageRates.WebAPI\\eSya.ManageRates.WebAPI\\wwwroot\\Resources\\ar-EG.json",
+      "SourceId": "eSya.ManageRates.WebAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Projects\\eSyaProjects2022\\eSya.ManageRates.WebAPI\\eSya.ManageRates.WebAPI\\eSya.ManageRates.WebAPI\\wwwroot\\",
+      "BasePath": "_content/eSya.ManageRates.WebAPI",
+      "RelativePath": "Resources/ar-EG.json",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Resources\\ar-EG.json"
+    },
+    {
+      "Identity": "D:\\Projects\\eSyaProjects2022\\eSya.ManageRates.WebAPI\\eSya.ManageRates.WebAPI\\eSya.ManageRates.WebAPI\\wwwroot\\Resources\\en-US.json",
+      "SourceId": "eSya.ManageRates.WebAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Projects\\eSyaProjects2022\\eSya.ManageRates.WebAPI\\eSya.ManageRates.WebAPI\\eSya.ManageRates.WebAPI\\wwwroot\\",
+      "BasePath": "_content/eSya.ManageRates.WebAPI",
+      "RelativePath": "Resources/en-US.json",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Resources\\en-US.json"
+    }
+  ]
+}
