@@ -13,6 +13,7 @@ namespace eSya.ManageRates.DL.Entities
         public int ServiceTypeId { get; set; }
         public string ServiceTypeDesc { get; set; } = null!;
         public int PrintSequence { get; set; }
+        public bool UsageStatus { get; set; }
         public bool ActiveStatus { get; set; }
         public string FormId { get; set; } = null!;
         public int CreatedBy { get; set; }

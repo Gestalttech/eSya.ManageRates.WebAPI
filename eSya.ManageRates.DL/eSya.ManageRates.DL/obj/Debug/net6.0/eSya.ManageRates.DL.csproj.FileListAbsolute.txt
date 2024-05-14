@@ -36,3 +36,4 @@ D:\Projects\eSyaProjects2022\eSya.ManageRates.WebAPI\eSya.ManageRates.DL\eSya.Ma
 D:\Projects\eSyaProjects2022\eSya.ManageRates.WebAPI\eSya.ManageRates.DL\eSya.ManageRates.DL\obj\Debug\net6.0\eSya.ManageRates.DL.pdb
 D:\Projects\eSyaProjects2022\eSya.ManageRates.WebAPI\eSya.ManageRates.DL\eSya.ManageRates.DL\obj\Debug\net6.0\eSya.ManageRates.DL.genruntimeconfig.cache
 D:\Projects\eSyaProjects2022\eSya.ManageRates.WebAPI\eSya.ManageRates.DL\eSya.ManageRates.DL\obj\Debug\net6.0\ref\eSya.ManageRates.DL.dll
+D:\Projects\eSyaProjects2022\eSya.ManageRates.WebAPI\eSya.ManageRates.DL\eSya.ManageRates.DL\obj\Debug\net6.0\eSya.ManageRates.DL.sourcelink.json

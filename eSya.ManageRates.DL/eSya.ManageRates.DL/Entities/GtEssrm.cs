@@ -12,11 +12,10 @@ namespace eSya.ManageRates.DL.Entities
 
         public int ServiceId { get; set; }
         public int ServiceClassId { get; set; }
+        public int ServiceFor { get; set; }
         public string ServiceDesc { get; set; } = null!;
         public string? ServiceShortDesc { get; set; }
         public string Gender { get; set; } = null!;
-        public bool IsServiceBillable { get; set; }
-        public decimal ServiceCost { get; set; }
         public string? InternalServiceCode { get; set; }
         public bool ActiveStatus { get; set; }
         public string FormId { get; set; } = null!;

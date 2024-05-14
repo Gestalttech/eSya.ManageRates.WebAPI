@@ -8,7 +8,7 @@ namespace eSya.ManageRates.DL.Entities
         public int ApplicationCode { get; set; }
         public int CodeType { get; set; }
         public string CodeDesc { get; set; } = null!;
-        public string? ShortCode { get; set; }
+        public string ShortCode { get; set; } = null!;
         public bool DefaultStatus { get; set; }
         public bool UsageStatus { get; set; }
         public bool ActiveStatus { get; set; }

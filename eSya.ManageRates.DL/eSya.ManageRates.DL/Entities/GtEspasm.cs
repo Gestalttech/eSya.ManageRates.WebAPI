@@ -5,6 +5,7 @@ namespace eSya.ManageRates.DL.Entities
 {
     public partial class GtEspasm
     {
+        public int BusinessKey { get; set; }
         public int ServiceId { get; set; }
         public int ParameterId { get; set; }
         public decimal ParmPerc { get; set; }

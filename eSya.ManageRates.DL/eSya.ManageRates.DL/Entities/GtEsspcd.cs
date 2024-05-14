@@ -9,8 +9,9 @@ namespace eSya.ManageRates.DL.Entities
         public string SpecialtyDesc { get; set; } = null!;
         public string Gender { get; set; } = null!;
         public string SpecialtyType { get; set; } = null!;
-        public string AlliedServices { get; set; } = null!;
+        public string SpecialtyGroup { get; set; } = null!;
         public string? MedicalIcon { get; set; }
+        public string? FocusArea { get; set; }
         public bool ActiveStatus { get; set; }
         public string FormId { get; set; } = null!;
         public int CreatedBy { get; set; }
