@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("eSya.ManageRates.IF")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9934f795a44f500900f21469cf2b590e5aaccbf3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+65d1cfffd0bf0de2d96fc2ab7721a22abf01f3b3")]
 [assembly: System.Reflection.AssemblyProductAttribute("eSya.ManageRates.IF")]
 [assembly: System.Reflection.AssemblyTitleAttribute("eSya.ManageRates.IF")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

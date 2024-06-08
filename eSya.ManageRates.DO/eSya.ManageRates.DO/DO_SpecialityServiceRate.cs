@@ -9,6 +9,8 @@ namespace eSya.ManageRates.DO
     public class DO_SpecialityServiceRate
     {
         public int BusinessKey { get; set; }
+        public int ClinicId { get; set; }
+        public int ConsultationId { get; set; }
         public int ServiceId { get; set; }
         public int RateType { get; set; }
         public int SpecialtyId { get; set; }
@@ -22,6 +24,6 @@ namespace eSya.ManageRates.DO
         public string TerminalID { get; set; }
         public string? ServiceDesc { get; set; }
         public string? SpecialtyDesc { get; set; }
-
+     
     }
 }

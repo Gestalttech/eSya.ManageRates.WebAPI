@@ -25,9 +25,14 @@ namespace eSya.ManageRates.DL.Entities
         public virtual DbSet<GtEsclsl> GtEsclsls { get; set; } = null!;
         public virtual DbSet<GtEsclst> GtEsclsts { get; set; } = null!;
         public virtual DbSet<GtEscsst> GtEscssts { get; set; } = null!;
+        public virtual DbSet<GtEsdobl> GtEsdobls { get; set; } = null!;
         public virtual DbSet<GtEsdocd> GtEsdocds { get; set; } = null!;
+        public virtual DbSet<GtEsdosp> GtEsdosps { get; set; } = null!;
+        public virtual DbSet<GtEsopcl> GtEsopcls { get; set; } = null!;
         public virtual DbSet<GtEspasm> GtEspasms { get; set; } = null!;
+        public virtual DbSet<GtEsspbl> GtEsspbls { get; set; } = null!;
         public virtual DbSet<GtEsspcd> GtEsspcds { get; set; } = null!;
+        public virtual DbSet<GtEsspcl> GtEsspcls { get; set; } = null!;
         public virtual DbSet<GtEssrbr> GtEssrbrs { get; set; } = null!;
         public virtual DbSet<GtEssrcl> GtEssrcls { get; set; } = null!;
         public virtual DbSet<GtEssrgr> GtEssrgrs { get; set; } = null!;
@@ -150,14 +155,20 @@ namespace eSya.ManageRates.DL.Entities
 
             modelBuilder.Entity<GtEscdst>(entity =>
             {
-                entity.HasKey(e => new { e.BusinessKey, e.ServiceId, e.RateType, e.DoctorId, e.CurrencyCode, e.EffectiveDate })
+                entity.HasKey(e => new { e.BusinessKey, e.ClinicId, e.ConsultationId, e.ServiceId, e.RateType, e.DoctorId, e.SpecialtyId, e.CurrencyCode, e.EffectiveDate })
                     .HasName("PK_GT_ESCDST_1");
 
                 entity.ToTable("GT_ESCDST");
 
+                entity.Property(e => e.ClinicId).HasColumnName("ClinicID");
+
+                entity.Property(e => e.ConsultationId).HasColumnName("ConsultationID");
+
                 entity.Property(e => e.ServiceId).HasColumnName("ServiceID");
 
                 entity.Property(e => e.DoctorId).HasColumnName("DoctorID");
+
+                entity.Property(e => e.SpecialtyId).HasColumnName("SpecialtyID");
 
                 entity.Property(e => e.CurrencyCode).HasMaxLength(4);
 
@@ -243,9 +254,14 @@ namespace eSya.ManageRates.DL.Entities
 
             modelBuilder.Entity<GtEscsst>(entity =>
             {
-                entity.HasKey(e => new { e.BusinessKey, e.ServiceId, e.RateType, e.SpecialtyId, e.CurrencyCode, e.EffectiveDate });
+                entity.HasKey(e => new { e.BusinessKey, e.ClinicId, e.ConsultationId, e.ServiceId, e.RateType, e.SpecialtyId, e.CurrencyCode, e.EffectiveDate })
+                    .HasName("PK_GT_ESCSST_1");
 
                 entity.ToTable("GT_ESCSST");
+
+                entity.Property(e => e.ClinicId).HasColumnName("ClinicID");
+
+                entity.Property(e => e.ConsultationId).HasColumnName("ConsultationID");
 
                 entity.Property(e => e.ServiceId).HasColumnName("ServiceID");
 
@@ -271,6 +287,28 @@ namespace eSya.ManageRates.DL.Entities
                 entity.Property(e => e.ModifiedTerminal).HasMaxLength(50);
 
                 entity.Property(e => e.Tariff).HasColumnType("numeric(18, 6)");
+            });
+
+            modelBuilder.Entity<GtEsdobl>(entity =>
+            {
+                entity.HasKey(e => new { e.DoctorId, e.BusinessKey });
+
+                entity.ToTable("GT_ESDOBL");
+
+                entity.Property(e => e.DoctorId).HasColumnName("DoctorID");
+
+                entity.Property(e => e.CreatedOn).HasColumnType("datetime");
+
+                entity.Property(e => e.CreatedTerminal).HasMaxLength(50);
+
+                entity.Property(e => e.FormId)
+                    .HasMaxLength(10)
+                    .IsUnicode(false)
+                    .HasColumnName("FormID");
+
+                entity.Property(e => e.ModifiedOn).HasColumnType("datetime");
+
+                entity.Property(e => e.ModifiedTerminal).HasMaxLength(50);
             });
 
             modelBuilder.Entity<GtEsdocd>(entity =>
@@ -303,11 +341,6 @@ namespace eSya.ManageRates.DL.Entities
                     .IsUnicode(false)
                     .HasColumnName("FormID");
 
-                entity.Property(e => e.Gender)
-                    .HasMaxLength(1)
-                    .IsUnicode(false)
-                    .IsFixedLength();
-
                 entity.Property(e => e.Isdcode).HasColumnName("ISDCode");
 
                 entity.Property(e => e.MobileNumber)
@@ -320,11 +353,56 @@ namespace eSya.ManageRates.DL.Entities
 
                 entity.Property(e => e.Password).HasMaxLength(20);
 
-                entity.Property(e => e.TraiffFrom)
-                    .HasMaxLength(1)
+                entity.Property(e => e.TraiffFrom).HasDefaultValueSql("('N')");
+            });
+
+            modelBuilder.Entity<GtEsdosp>(entity =>
+            {
+                entity.HasKey(e => new { e.BusinessKey, e.SpecialtyId, e.DoctorId })
+                    .HasName("PK_GT_ESDOSP_1");
+
+                entity.ToTable("GT_ESDOSP");
+
+                entity.Property(e => e.SpecialtyId).HasColumnName("SpecialtyID");
+
+                entity.Property(e => e.DoctorId).HasColumnName("DoctorID");
+
+                entity.Property(e => e.CreatedOn).HasColumnType("datetime");
+
+                entity.Property(e => e.CreatedTerminal).HasMaxLength(50);
+
+                entity.Property(e => e.FormId)
+                    .HasMaxLength(10)
                     .IsUnicode(false)
-                    .HasDefaultValueSql("('N')")
-                    .IsFixedLength();
+                    .HasColumnName("FormID");
+
+                entity.Property(e => e.ModifiedOn).HasColumnType("datetime");
+
+                entity.Property(e => e.ModifiedTerminal).HasMaxLength(50);
+            });
+
+            modelBuilder.Entity<GtEsopcl>(entity =>
+            {
+                entity.HasKey(e => new { e.BusinessKey, e.ClinicId, e.ConsultationId });
+
+                entity.ToTable("GT_ESOPCL");
+
+                entity.Property(e => e.ClinicId).HasColumnName("ClinicID");
+
+                entity.Property(e => e.ConsultationId).HasColumnName("ConsultationID");
+
+                entity.Property(e => e.CreatedOn).HasColumnType("datetime");
+
+                entity.Property(e => e.CreatedTerminal).HasMaxLength(50);
+
+                entity.Property(e => e.FormId)
+                    .HasMaxLength(10)
+                    .IsUnicode(false)
+                    .HasColumnName("FormID");
+
+                entity.Property(e => e.ModifiedOn).HasColumnType("datetime");
+
+                entity.Property(e => e.ModifiedTerminal).HasMaxLength(50);
             });
 
             modelBuilder.Entity<GtEspasm>(entity =>
@@ -363,6 +441,29 @@ namespace eSya.ManageRates.DL.Entities
                     .HasForeignKey(d => d.ServiceId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_GT_ESPASM_GT_ESSRMS");
+            });
+
+            modelBuilder.Entity<GtEsspbl>(entity =>
+            {
+                entity.HasKey(e => new { e.BusinessKey, e.SpecialtyId })
+                    .HasName("PK_GT_ESSPBL_1");
+
+                entity.ToTable("GT_ESSPBL");
+
+                entity.Property(e => e.SpecialtyId).HasColumnName("SpecialtyID");
+
+                entity.Property(e => e.CreatedOn).HasColumnType("datetime");
+
+                entity.Property(e => e.CreatedTerminal).HasMaxLength(50);
+
+                entity.Property(e => e.FormId)
+                    .HasMaxLength(10)
+                    .IsUnicode(false)
+                    .HasColumnName("FormID");
+
+                entity.Property(e => e.ModifiedOn).HasColumnType("datetime");
+
+                entity.Property(e => e.ModifiedTerminal).HasMaxLength(50);
             });
 
             modelBuilder.Entity<GtEsspcd>(entity =>
@@ -408,6 +509,32 @@ namespace eSya.ManageRates.DL.Entities
                     .HasMaxLength(1)
                     .IsUnicode(false)
                     .IsFixedLength();
+            });
+
+            modelBuilder.Entity<GtEsspcl>(entity =>
+            {
+                entity.HasKey(e => new { e.BusinessKey, e.SpecialtyId, e.ClinicId, e.ConsultationId });
+
+                entity.ToTable("GT_ESSPCL");
+
+                entity.Property(e => e.SpecialtyId).HasColumnName("SpecialtyID");
+
+                entity.Property(e => e.ClinicId).HasColumnName("ClinicID");
+
+                entity.Property(e => e.ConsultationId).HasColumnName("ConsultationID");
+
+                entity.Property(e => e.CreatedOn).HasColumnType("datetime");
+
+                entity.Property(e => e.CreatedTerminal).HasMaxLength(50);
+
+                entity.Property(e => e.FormId)
+                    .HasMaxLength(10)
+                    .IsUnicode(false)
+                    .HasColumnName("FormID");
+
+                entity.Property(e => e.ModifiedOn).HasColumnType("datetime");
+
+                entity.Property(e => e.ModifiedTerminal).HasMaxLength(50);
             });
 
             modelBuilder.Entity<GtEssrbr>(entity =>

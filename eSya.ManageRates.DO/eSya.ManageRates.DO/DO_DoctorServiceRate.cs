@@ -9,9 +9,12 @@ namespace eSya.ManageRates.DO
     public class DO_DoctorServiceRate
     {
         public int BusinessKey { get; set; }
+        public int ClinicId { get; set; }
+        public int ConsultationId { get; set; }
         public int ServiceId { get; set; }
         public int RateType { get; set; }
         public int DoctorId { get; set; }
+        public int SpecialtyId { get; set; }
         public string CurrencyCode { get; set; }
         public DateTime EffectiveDate { get; set; }
         public decimal Tariff { get; set; }
