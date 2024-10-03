@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("eSya.ManageRates.WebAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+afee9f0610ae58356afadc97795d8c38af6fb990")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6105eb0e3629ebc272fcfbc64d29007f8d7afec5")]
 [assembly: System.Reflection.AssemblyProductAttribute("eSya.ManageRates.WebAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("eSya.ManageRates.WebAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
