@@ -8,7 +8,6 @@ namespace eSya.ManageRates.DL.Entities
     public partial class eSyaEnterprise : DbContext
     {
         public static string _connString = "";
-
         public eSyaEnterprise()
         {
         }
@@ -32,7 +31,6 @@ namespace eSya.ManageRates.DL.Entities
         public virtual DbSet<GtEspasm> GtEspasms { get; set; } = null!;
         public virtual DbSet<GtEsspbl> GtEsspbls { get; set; } = null!;
         public virtual DbSet<GtEsspcd> GtEsspcds { get; set; } = null!;
-        public virtual DbSet<GtEsspcl> GtEsspcls { get; set; } = null!;
         public virtual DbSet<GtEssrbr> GtEssrbrs { get; set; } = null!;
         public virtual DbSet<GtEssrcl> GtEssrcls { get; set; } = null!;
         public virtual DbSet<GtEssrgr> GtEssrgrs { get; set; } = null!;
@@ -112,15 +110,6 @@ namespace eSya.ManageRates.DL.Entities
                 entity.Property(e => e.ModifiedTerminal).HasMaxLength(50);
 
                 entity.Property(e => e.ShortDesc).HasMaxLength(15);
-
-                entity.Property(e => e.TocurrConversion).HasColumnName("TOCurrConversion");
-
-                entity.Property(e => e.TolocalCurrency)
-                    .IsRequired()
-                    .HasColumnName("TOLocalCurrency")
-                    .HasDefaultValueSql("((1))");
-
-                entity.Property(e => e.TorealCurrency).HasColumnName("TORealCurrency");
             });
 
             modelBuilder.Entity<GtEccuco>(entity =>
@@ -511,32 +500,6 @@ namespace eSya.ManageRates.DL.Entities
                     .IsFixedLength();
             });
 
-            modelBuilder.Entity<GtEsspcl>(entity =>
-            {
-                entity.HasKey(e => new { e.BusinessKey, e.SpecialtyId, e.ClinicId, e.ConsultationId });
-
-                entity.ToTable("GT_ESSPCL");
-
-                entity.Property(e => e.SpecialtyId).HasColumnName("SpecialtyID");
-
-                entity.Property(e => e.ClinicId).HasColumnName("ClinicID");
-
-                entity.Property(e => e.ConsultationId).HasColumnName("ConsultationID");
-
-                entity.Property(e => e.CreatedOn).HasColumnType("datetime");
-
-                entity.Property(e => e.CreatedTerminal).HasMaxLength(50);
-
-                entity.Property(e => e.FormId)
-                    .HasMaxLength(10)
-                    .IsUnicode(false)
-                    .HasColumnName("FormID");
-
-                entity.Property(e => e.ModifiedOn).HasColumnType("datetime");
-
-                entity.Property(e => e.ModifiedTerminal).HasMaxLength(50);
-            });
-
             modelBuilder.Entity<GtEssrbr>(entity =>
             {
                 entity.HasKey(e => new { e.BusinessKey, e.ServiceId, e.RateType, e.CurrencyCode, e.EffectiveDate });
@@ -641,12 +604,6 @@ namespace eSya.ManageRates.DL.Entities
                 entity.Property(e => e.ModifiedOn).HasColumnType("datetime");
 
                 entity.Property(e => e.ModifiedTerminal).HasMaxLength(50);
-
-                entity.Property(e => e.ServiceCriteria)
-                    .HasMaxLength(1)
-                    .IsUnicode(false)
-                    .HasDefaultValueSql("((0))")
-                    .IsFixedLength();
 
                 entity.Property(e => e.ServiceGroupDesc).HasMaxLength(50);
 
